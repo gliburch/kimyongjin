@@ -1,0 +1,51 @@
+<style>
+header {
+  overflow:hidden;
+  position:relative;
+  width:950px;
+  margin:15px auto;
+  border:1px solid #9ca2a0;
+  background-color:#ef0303;
+}
+header h1 {
+  float:left;
+  padding:10px 0 10px 20px;
+}
+header h1 img {
+  display:block;
+  width:auto;
+  height:45px;
+}
+header nav {
+  position:absolute;
+  top:25px;
+  right:55px;
+}
+header nav ul li {
+  zoom:1;
+  display:inline-block;
+  margin:0 0 0 66px;
+}
+header nav ul li a {
+  color:#fff;
+  text-decoration:none;
+}
+header nav ul li a:hover {
+  text-decoration:underline;
+}
+</style>
+<header>
+  <h1><a href="/"><img src="/assets/images/logo-top.png" alt="{{ site.title }}"></a></h1>
+  <nav>
+    <ul>
+      {%- assign default_paths = site.pages | map: "path" -%}
+      {%- assign page_paths = site.header_pages | default: default_paths -%}
+      {%- for path in page_paths -%}
+        {%- assign my_page = site.pages | where: "path", path | first -%}
+        {%- if my_page.title -%}
+        <li><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </nav>
+</header>

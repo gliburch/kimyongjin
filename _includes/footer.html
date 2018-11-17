@@ -1,0 +1,78 @@
+<style>
+footer {
+  overflow:hidden;
+  width:950px;
+  margin:0 auto;
+  padding-bottom:50px;
+}
+footer .services {
+  width:101.5%;
+  margin-bottom:25px;
+  font-size:0;
+}
+footer .services li {
+  zoom:1;
+  display:inline-block;
+  width:16.66%;
+  list-style:none;
+  vertical-align:top;
+}
+footer .services dl {
+  min-height:160px;
+  margin-right:15px;
+  padding:15px 10px;
+  background-color:#fff;
+  box-shadow:2px 2px 1px 0 rgba(0,0,0,0.3);
+}
+footer .services dl dt {
+  margin-bottom:5px;
+  font-size:18px;
+  font-weight:bold;
+}
+footer .services dl dd {
+  color:#929292;
+  font-size:13px;
+}
+footer address {
+  display:block;
+  clear:both;
+  color:#929292;
+  font-style:normal;
+  line-height:160%;
+}
+footer address a {
+  color:#929292;
+  text-decoration:none;
+}
+footer address a:hover {
+  text-decoration:underline;
+}
+</style>
+<footer>
+  <ul class="services">
+    {% for service in site.services %}
+    <li>
+      <dl>
+      <dt>{{ service.title }}</dt>
+      {% for item in service.service_items %}
+        <dd>{{ item }}</dd>
+      {% endfor %}
+      </dl>
+    </li>
+    {% endfor %}
+  </ul>
+  <address>
+    <p>
+      {{ site.company_name }}
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      사업자등록번호 : {{ site.business_number }}
+    </p>
+    <p>{{ site.company_address }}</p>
+    <p>
+      TEL. <a href="tel:{{ site.company_tel }}">{{ site.company_tel }}</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      FAX. <a href="tel:{{ site.company_fax }}">{{ site.company_fax }}</a>
+    </p>
+    <p>E-mail. <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+  </address>
+</footer>

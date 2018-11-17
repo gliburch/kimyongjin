@@ -13,16 +13,70 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Your awesome title
-email: your-email@example.com
+title: 언제나 고객과함께, 김용진 감정편가사
+email: isan04@kapaland.co.kr
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  김용진 감정평가사 사이트를 찾아주셔서 감사합니다.
+  제가 이 사이트를 만들고 운영하게 된 계기는 기존에 접근하기 어려웠던 강정평가 서비스에 대하여
+  궁금하신 사항을 쉽고 부담없이 상담하고 조언을 받을실 수 있게 해드리고 싶어서입니다.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "http://kimyongjin.co.kr" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: null
+github_username: null
+
+# Custom site settings
+services:
+  - title: 부동산평가<br>무료자문
+    service_items:
+      - 토지 (대지, 임야 등)
+      - 건물 (단독, 다가구 등)
+      - 공동주택 (아파트 등)
+      - 공업시설 (공장 등)
+      - 업무시설 (빌딩 등)
+      - 상업시설 (상가 등)
+  - title: 무형자산평가<br>무료자문
+    service_items:
+      - 영업권
+      - 특허권
+      - 상표권
+      - 실용신안권
+      - 비상장주식
+      - 기타 기업가치평가
+  - title: 특수평가<br>무료자문
+    service_items:
+      - 소송관련
+      - 골프장
+      - NPL (부실채권)
+      - 구분지상권
+      - 선박항공기
+      - 오염부동산
+      - 일조권조망권 등
+  - title: 컨설팅보고서<br>무료자문
+    service_items:
+      - 부동산개발
+      - 부동산시행
+      - 부동산투자
+      - 부동산담보
+      - 과정상 요구되는<br>투작결정분석 목적<br>전문보고서 작성
+  - title: 기계및설비평가<br>무료자문
+    service_items:
+      - 법인전환
+      - 현무출자
+      - 법인세감면
+      - 담보설정 등<br>목적을 위한<br>감정평가
+  - title: 그외모든<br>무료자문
+    service_items:
+      - 상속세증여세양도세
+      - 법인전환 및 법인분리
+      - 현물출자유상증자
+      - 기업자산재평가
+      - 기업 및 개인회생파산
+      - 공기관제출용감정평가<br>보상평가 등
+company_name: (주)감정평가법인 이산 북부지사
+business_number: 232-85-00069
+company_address: 경기도 고양시 덕양구 용현로 3 행신프라자 609호
+company_tel: 031)972-0704
+company_fax: 031)972-2345
 
 # Build settings
 markdown: kramdown
