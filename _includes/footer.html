@@ -23,15 +23,19 @@ footer .services dl {
   padding:15px 10px;
   background-color:#fff;
   box-shadow:2px 2px 1px 0 rgba(0,0,0,0.3);
+  cursor:pointer;
+}
+footer .services dl:hover {
+  background-color:#fafafa;
 }
 footer .services dl dt {
   margin-bottom:5px;
-  font-size:18px;
+  font-size:16px;
   font-weight:bold;
 }
 footer .services dl dd {
   color:#929292;
-  font-size:13px;
+  font-size:12px;
 }
 footer address {
   display:block;
@@ -52,7 +56,7 @@ footer address a:hover {
   <ul class="services">
     {% for service in site.services %}
     <li>
-      <dl>
+      <dl onclick="location.href = '/contact'">
       <dt>{{ service.title }}</dt>
       {% for item in service.service_items %}
         <dd>{{ item }}</dd>
