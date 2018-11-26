@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: 언제나 고객과함께, 김용진 감정편가사
+title: 언제나 고객과함께, 김용진 감정평가사
 email: uniqueyouth@naver.com
 description: >- # this means to ignore newlines until "baseurl:"
   김용진 감정평가사 사이트를 찾아주셔서 감사합니다.
