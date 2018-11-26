@@ -16,6 +16,7 @@ img {
   border:none;
 }
 main {
+  display:block;
   position:relative;
   width:950px;
   min-height:480px;
