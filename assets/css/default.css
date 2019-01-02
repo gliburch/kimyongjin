@@ -12,7 +12,11 @@ body {
   text-size-adjust:none;
   -webkit-text-size-adjust:none;
 }
+img {
+  border:none;
+}
 main {
+  display:block;
   position:relative;
   width:950px;
   min-height:480px;
