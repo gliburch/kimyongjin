@@ -73,6 +73,7 @@ services:
       - 기업 및 개인회생파산
       - 공기관제출용감정평가<br>보상평가 등
 company_name: 하이테크 감정평가법인 주식회사
+ceo_name: 김용진
 business_number: 491-87-00809
 company_address: 서울특별시 강남구 영동대로 511 무역센터 13층 (삼성역)
 company_tel: 02-6401-0706
