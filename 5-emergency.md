@@ -12,7 +12,8 @@ permalink: /emergency/
 자문서비스를 받으실 시간적 여유가 없는<br>
 긴급한 상황이신 분께서는 지금 바로 전화주세요.
 
-김용진 감정평가사 기업가치평가사
+하이테크 감정평가법인 김순호 차장
 
-핸드폰 : [010-8947-0704](tel:010-8947-0704)<br>
-사무실 : [{{ site.company_tel }}](tel:{{ site.company_tel }})
+핸드폰 : [010-5552-9038](tel:010-5552-9038)<br>
+이메일 : [yachine88@naver.com](mailto:yachine88@naver.com)
+<!-- 사무실 : [{{ site.company_tel }}](tel:{{ site.company_tel }}) -->
