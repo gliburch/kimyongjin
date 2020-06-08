@@ -15,4 +15,4 @@ permalink: /emergency/
 김용진 감정평가사 기업가치평가사
 
 핸드폰 : [010-5552-9038](tel:010-5552-9038)<br>
-사무실 : [{{ site.company_tel }}](tel:{{ site.company_tel }})
+<!-- 사무실 : [{{ site.company_tel }}](tel:{{ site.company_tel }}) -->
