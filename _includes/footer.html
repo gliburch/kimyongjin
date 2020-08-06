@@ -5,6 +5,21 @@ footer {
   margin:0 auto;
   padding-bottom:50px;
 }
+footer marquee {
+  margin:0 0 8px;
+  padding:10px 0;
+  background-color:#fff;
+}
+footer marquee mark {
+  margin-right:50px;
+  background:none;
+  font-family:'Nanum Gothic', sans-serif;
+  font-size:22px;
+  font-weight:100;
+}
+footer marquee mark time {
+  margin-right:15px;
+}
 footer .services {
   width:101.5%;
   margin-bottom:25px;
@@ -18,11 +33,12 @@ footer .services li {
   vertical-align:top;
 }
 footer .services dl {
-  min-height:40px;
+  min-height:25px;
   margin-right:15px;
-  padding:15px 10px;
+  padding:20px 0;
   background-color:#fff;
   box-shadow:2px 2px 1px 0 rgba(0,0,0,0.3);
+  text-align:center;
   cursor:pointer;
 }
 footer .services dl:hover {
@@ -30,7 +46,7 @@ footer .services dl:hover {
 }
 footer .services dl dt {
   margin-bottom:5px;
-  font-size:16px;
+  font-size:17px;
   font-weight:bold;
   line-height:130%;
 }
@@ -54,7 +70,20 @@ footer address a:hover {
 }
 </style>
 <footer>
-  <marquee>Some text here.</marquee>
+  <marquee>
+    <mark>동X산업 특허권 평가상담</mark>
+    <mark>에X스정밀 특허권 평가상담</mark>
+    <mark>최X희 저작권 평가상담</mark>
+    <mark>꽁C드가구 저작권 평가상담</mark>
+    <mark>노X통닭 구월지점 영업권 평가상담</mark>
+    <mark>김X애 특허권 평가상담</mark>
+    <mark>시X니처 영업권 평가상담</mark>
+    <mark>지X짐 영업권 평가상담</mark>
+    <mark>대X산업 특허권 평가상담</mark>
+    <mark>BJ김XX 상표권 평가상담</mark>
+    <mark>가수이XX 저작권 평가상담</mark>
+    <mark>바X김밥 대치점 영업권평가상담</mark>
+  </marquee>
   <ul class="services">
     {% for service in site.services %}
     <li>
@@ -68,6 +97,7 @@ footer address a:hover {
     {% endfor %}
   </ul>
   <address>
+    <p><strong>무형자산평가 업무실적 1위</strong></p>
     <p>
       {{ site.company_name }}
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -88,3 +118,6 @@ footer address a:hover {
     </p>
   </address>
 </footer>
+<script>
+  $('marquee mark').prepend('<time>' + (new Date()).toISOString().split('T')[0] + '</time>');
+</script>

@@ -26,7 +26,7 @@ github_username: null
 
 # Custom site settings
 services:
-  - title: 특허권평가<br>무료자문
+  - title: 특허권평가 무료상담
     service_items:
 #      - 영업권
 #      - 특허권
@@ -34,7 +34,7 @@ services:
 #      - 실용신안권
 #      - 비상장주식
 #      - 기타 기업가치평가
-  - title: 영업권평가<br>무료자문
+  - title: 영업권평가 무료상담
     service_items:
 #      - 토지 (대지, 임야 등)
 #      - 건물 (단독, 다가구 등)
@@ -42,7 +42,7 @@ services:
 #      - 공업시설 (공장 등)
 #      - 업무시설 (빌딩 등)
 #      - 상업시설 (상가 등)
-  - title: 상표권평가<br>무료자문
+  - title: 상표권평가 무료상담
     service_items:
 #      - 소송관련
 #      - 골프장
@@ -51,20 +51,20 @@ services:
 #      - 선박항공기
 #      - 오염부동산
 #      - 일조권조망권 등
-  - title: 저작권평가<br>무료자문
+  - title: 저작권평가 무료상담
     service_items:
 #      - 부동산개발
 #      - 부동산시행
 #      - 부동산투자
 #      - 부동산담보
 #      - 과정상 요구되는<br>투작결정분석 목적<br>전문보고서 작성
-#  - title: 기계및설비평가<br>무료자문
+#  - title: 기계및설비평가 무료상담
 #    service_items:
 #      - 법인전환
 #      - 현무출자
 #      - 법인세감면
 #      - 담보설정 등<br>목적을 위한<br>감정평가
-  - title: 부동산평가<br>무료자문
+  - title: 부동산평가 무료상담
     service_items:
 #      - 상속세증여세양도세
 #      - 법인전환 및 법인분리
