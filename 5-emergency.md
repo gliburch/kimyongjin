@@ -14,5 +14,5 @@ permalink: /emergency/
 
 김용진 감정평가사 기업가치평가사
 
-핸드폰 : [010-2358-2938](tel:010-2358-2938)<br>
+핸드폰 : [010-9044-5760](tel:010-9044-5760)<br>
 <!-- 사무실 : [{{ site.company_tel }}](tel:{{ site.company_tel }}) -->
