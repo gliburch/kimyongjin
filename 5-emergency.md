@@ -16,3 +16,5 @@ permalink: /emergency/
 
 핸드폰 : [010-2358-2938](tel:010-2358-2938)<br>
 <!-- 사무실 : [{{ site.company_tel }}](tel:{{ site.company_tel }}) -->
+
+{% include contacts.html %}

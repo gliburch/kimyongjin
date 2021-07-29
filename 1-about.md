@@ -11,7 +11,8 @@ main h2 {
   font-size:20px;
 }
 main p {
-  margin:10px 0 10px 50%;
+  margin-top:10px
+  margin-bottom:10px;
   line-height:125%;
   font-size:14px;
 }
@@ -44,3 +45,5 @@ main p {
 현 대한가맹거래사협회 고문감정평가사<br>
 현 하이테크감정평가법인 대표이사<br>
 현 하이테크책임컨설팅 대표이사<br>
+
+{% include contacts.html %}

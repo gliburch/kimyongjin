@@ -44,3 +44,18 @@ main p a {
 main p a:hover {
   text-decoration:underline;
 }
+@media (max-width: 950px) {
+  main {
+    width:auto;
+    margin:15px;
+  }
+  main h2 {
+    margin-left:20px;
+    margin-right:20px;
+    padding-top:30px;
+  }
+  main p {
+    margin-left:20px;
+    margin-right:20px;
+  }
+}

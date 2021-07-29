@@ -18,8 +18,13 @@ header h1 img {
 }
 header nav {
   position:absolute;
-  top:25px;
+  top:0;
   right:55px;
+}
+header nav ul {
+  overflow:auto;
+  white-space:nowrap;
+  padding:20px 0;
 }
 header nav ul li {
   zoom:1;
@@ -32,6 +37,20 @@ header nav ul li a {
 }
 header nav ul li a:hover {
   text-decoration:underline;
+}
+@media (max-width: 950px) {
+  header {
+    width:auto;
+  }
+  header h1 {
+    float:none;
+  }
+  header nav {
+    position:static;
+    top:auto;
+    right:auto;
+    background-color:rgba(0,0,0,0.15);
+  }
 }
 </style>
 <header>
