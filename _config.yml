@@ -13,10 +13,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: 언제나 고객과함께, 김용진 감정평가사
+title: 언제나 고객과함께, 감정평가사 김제프용진
 email: hightechapp@naver.com
 description: >- # this means to ignore newlines until "baseurl:"
-  김용진 감정평가사 사이트를 찾아주셔서 감사합니다.
+  감정평가사 김제프용진 사이트를 찾아주셔서 감사합니다.
   제가 이 사이트를 만들고 운영하게 된 계기는 기존에 접근하기 어려웠던 강정평가 서비스에 대하여
   궁금하신 사항을 쉽고 부담없이 상담하고 조언을 받을실 수 있게 해드리고 싶어서입니다.
 baseurl: "" # the subpath of your site, e.g. /blog
