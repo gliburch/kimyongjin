@@ -1,0 +1,255 @@
+<style>
+.articles {
+  overflow: hidden;
+  width: 950px;
+  margin: 0 auto;
+}
+.articles ul {
+  margin: 0 -7px;
+}
+.articles ul li {
+  zoom: 1;
+  display: inline-block;
+  width: 25%;
+  margin-bottom: 15px;
+  vertical-align: top;
+}
+.articles ul li a {
+  display: block;
+  min-height: 190px;
+  margin: 0 7px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  text-decoration: none;
+}
+.articles ul li a:hover {
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+}
+.articles ul li strong {
+  overflow: hidden;
+  margin-bottom: 10px;
+  color: #222;
+  font-size: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /*! autoprefixer: on */
+}
+.articles ul li p {
+  overflow: hidden;
+  margin-bottom: 10px;
+  color: #777;
+  font-size: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /*! autoprefixer: on */
+}
+.articles ul li time {
+  color: #999;
+  font-size: 14px;
+}
+@media (max-width: 950px) {
+  .articles {
+    width: auto;
+    margin: 0 15px;
+  }
+  .articles ul li {
+    width: 50%;
+  }
+}
+@media (max-width: 640px) {
+  .articles ul li {
+    width: 100%;
+  }
+}
+</style>
+
+<div class="articles">
+  <ul id="articles">
+  </ul>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/locale/ko.js"></script>
+<script>
+/*  This work is licensed under Creative Commons GNU LGPL License.
+
+  License: http://creativecommons.org/licenses/LGPL/2.1/
+   Version: 0.9
+  Author:  Stefan Goessner/2006
+  Web:     http://goessner.net/ 
+*/
+function xml2json(xml, tab) {
+   var X = {
+      toObj: function(xml) {
+         var o = {};
+         if (xml.nodeType==1) {   // element node ..
+            if (xml.attributes.length)   // element with attributes  ..
+               for (var i=0; i<xml.attributes.length; i++)
+                  o["@"+xml.attributes[i].nodeName] = (xml.attributes[i].nodeValue||"").toString();
+            if (xml.firstChild) { // element has child nodes ..
+               var textChild=0, cdataChild=0, hasElementChild=false;
+               for (var n=xml.firstChild; n; n=n.nextSibling) {
+                  if (n.nodeType==1) hasElementChild = true;
+                  else if (n.nodeType==3 && n.nodeValue.match(/[^ \f\n\r\t\v]/)) textChild++; // non-whitespace text
+                  else if (n.nodeType==4) cdataChild++; // cdata section node
+               }
+               if (hasElementChild) {
+                  if (textChild < 2 && cdataChild < 2) { // structured element with evtl. a single text or/and cdata node ..
+                     X.removeWhite(xml);
+                     for (var n=xml.firstChild; n; n=n.nextSibling) {
+                        if (n.nodeType == 3)  // text node
+                           o["#text"] = X.escape(n.nodeValue);
+                        else if (n.nodeType == 4)  // cdata node
+                           o["#cdata"] = X.escape(n.nodeValue);
+                        else if (o[n.nodeName]) {  // multiple occurence of element ..
+                           if (o[n.nodeName] instanceof Array)
+                              o[n.nodeName][o[n.nodeName].length] = X.toObj(n);
+                           else
+                              o[n.nodeName] = [o[n.nodeName], X.toObj(n)];
+                        }
+                        else  // first occurence of element..
+                           o[n.nodeName] = X.toObj(n);
+                     }
+                  }
+                  else { // mixed content
+                     if (!xml.attributes.length)
+                        o = X.escape(X.innerXml(xml));
+                     else
+                        o["#text"] = X.escape(X.innerXml(xml));
+                  }
+               }
+               else if (textChild) { // pure text
+                  if (!xml.attributes.length)
+                     o = X.escape(X.innerXml(xml));
+                  else
+                     o["#text"] = X.escape(X.innerXml(xml));
+               }
+               else if (cdataChild) { // cdata
+                  if (cdataChild > 1)
+                     o = X.escape(X.innerXml(xml));
+                  else
+                     for (var n=xml.firstChild; n; n=n.nextSibling)
+                        o["#cdata"] = X.escape(n.nodeValue);
+               }
+            }
+            if (!xml.attributes.length && !xml.firstChild) o = null;
+         }
+         else if (xml.nodeType==9) { // document.node
+            o = X.toObj(xml.documentElement);
+         }
+         else
+            alert("unhandled node type: " + xml.nodeType);
+         return o;
+      },
+      toJson: function(o, name, ind) {
+         var json = name ? ("\""+name+"\"") : "";
+         if (o instanceof Array) {
+            for (var i=0,n=o.length; i<n; i++)
+               o[i] = X.toJson(o[i], "", ind+"\t");
+            json += (name?":[":"[") + (o.length > 1 ? ("\n"+ind+"\t"+o.join(",\n"+ind+"\t")+"\n"+ind) : o.join("")) + "]";
+         }
+         else if (o == null)
+            json += (name&&":") + "null";
+         else if (typeof(o) == "object") {
+            var arr = [];
+            for (var m in o)
+               arr[arr.length] = X.toJson(o[m], m, ind+"\t");
+            json += (name?":{":"{") + (arr.length > 1 ? ("\n"+ind+"\t"+arr.join(",\n"+ind+"\t")+"\n"+ind) : arr.join("")) + "}";
+         }
+         else if (typeof(o) == "string")
+            json += (name&&":") + "\"" + o.toString() + "\"";
+         else
+            json += (name&&":") + o.toString();
+         return json;
+      },
+      innerXml: function(node) {
+         var s = ""
+         if ("innerHTML" in node)
+            s = node.innerHTML;
+         else {
+            var asXml = function(n) {
+               var s = "";
+               if (n.nodeType == 1) {
+                  s += "<" + n.nodeName;
+                  for (var i=0; i<n.attributes.length;i++)
+                     s += " " + n.attributes[i].nodeName + "=\"" + (n.attributes[i].nodeValue||"").toString() + "\"";
+                  if (n.firstChild) {
+                     s += ">";
+                     for (var c=n.firstChild; c; c=c.nextSibling)
+                        s += asXml(c);
+                     s += "</"+n.nodeName+">";
+                  }
+                  else
+                     s += "/>";
+               }
+               else if (n.nodeType == 3)
+                  s += n.nodeValue;
+               else if (n.nodeType == 4)
+                  s += "<![CDATA[" + n.nodeValue + "]]>";
+               return s;
+            };
+            for (var c=node.firstChild; c; c=c.nextSibling)
+               s += asXml(c);
+         }
+         return s;
+      },
+      escape: function(txt) {
+         return txt.replace(/[\\]/g, "\\\\")
+                   .replace(/[\"]/g, '\\"')
+                   .replace(/[\n]/g, '\\n')
+                   .replace(/[\r]/g, '\\r');
+      },
+      removeWhite: function(e) {
+         e.normalize();
+         for (var n = e.firstChild; n; ) {
+            if (n.nodeType == 3) {  // text node
+               if (!n.nodeValue.match(/[^ \f\n\r\t\v]/)) { // pure whitespace text node
+                  var nxt = n.nextSibling;
+                  e.removeChild(n);
+                  n = nxt;
+               }
+               else
+                  n = n.nextSibling;
+            }
+            else if (n.nodeType == 1) {  // element node
+               X.removeWhite(n);
+               n = n.nextSibling;
+            }
+            else                      // any other node
+               n = n.nextSibling;
+         }
+         return e;
+      }
+   };
+   if (xml.nodeType == 9) // document node
+      xml = xml.documentElement;
+   var json = X.toJson(X.toObj(X.removeWhite(xml)), xml.nodeName, "\t");
+   return "{\n" + tab + (tab ? json.replace(/\t/g, tab) : json.replace(/\t|\n/g, "")) + "\n}";
+}
+</script>
+<script>
+$.get('http://cors.hightechapp.co.kr/?url=https://rss.blog.naver.com/eheheehee', function (response) {
+  var xml = response;
+  var jsonString = xml2json(xml).replace('undefined', ''); // 맨 앞에 'undefined' 가 붙어나오는 버그가 있어서 제거함.
+  var json = JSON.parse(jsonString);
+  if (json.rss && json.rss.channel && json.rss.channel.item) {
+    var articles = json.rss.channel.item;
+    articles.forEach(function (article) {
+      $('ul#articles').append([
+        '<li>',
+          '<a href="' + article.link + '" target="_blank">',
+            '<strong>' + article.title['#cdata'] + '</strong>',
+            '<p>' + article.description['#cdata'] + '</p>',
+            '<time>' + moment(article.pubDate).format('YYYY-MM-DD') + '</time>',
+          '</a>',
+        '</li>'
+      ].join(''));
+    });
+  }
+});
+</script>
