@@ -1,20 +1,35 @@
 <style>
-.articles {
+.feed {
   overflow: hidden;
   width: 950px;
   margin: 0 auto;
 }
-.articles ul {
+.feed marquee {
+  margin:0 0 8px;
+  padding:10px 0;
+  background-color:#fff;
+}
+.feed marquee mark {
+  margin-right:50px;
+  background:none;
+  font-family:'Nanum Gothic', sans-serif;
+  font-size:22px;
+  font-weight:100;
+}
+.feed marquee mark time {
+  margin-right:15px;
+}
+.feed ul {
   margin: 0 -7px;
 }
-.articles ul li {
+.feed ul li {
   zoom: 1;
   display: inline-block;
   width: 25%;
   margin-bottom: 15px;
   vertical-align: top;
 }
-.articles ul li a {
+.feed ul li a {
   display: block;
   min-height: 190px;
   margin: 0 7px;
@@ -23,10 +38,10 @@
   background-color: #fff;
   text-decoration: none;
 }
-.articles ul li a:hover {
+.feed ul li a:hover {
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
 }
-.articles ul li strong {
+.feed ul li strong {
   overflow: hidden;
   margin-bottom: 10px;
   color: #222;
@@ -37,7 +52,7 @@
   -webkit-box-orient: vertical;
   /*! autoprefixer: on */
 }
-.articles ul li p {
+.feed ul li p {
   overflow: hidden;
   margin-bottom: 10px;
   color: #777;
@@ -48,27 +63,41 @@
   -webkit-box-orient: vertical;
   /*! autoprefixer: on */
 }
-.articles ul li time {
+.feed ul li time {
   color: #999;
   font-size: 14px;
 }
 @media (max-width: 950px) {
-  .articles {
+  .feed {
     width: auto;
     margin: 0 15px;
   }
-  .articles ul li {
+  .feed ul li {
     width: 50%;
   }
 }
 @media (max-width: 640px) {
-  .articles ul li {
+  .feed ul li {
     width: 100%;
   }
 }
 </style>
 
-<div class="articles">
+<div class="feed">
+  <marquee>
+    <mark>동X산업 특허권 평가상담</mark>
+    <mark>에X스정밀 특허권 평가상담</mark>
+    <mark>최X희 저작권 평가상담</mark>
+    <mark>꽁C드가구 저작권 평가상담</mark>
+    <mark>노X통닭 구월지점 영업권 평가상담</mark>
+    <mark>김X애 특허권 평가상담</mark>
+    <mark>시X니처 영업권 평가상담</mark>
+    <mark>지X짐 영업권 평가상담</mark>
+    <mark>대X산업 특허권 평가상담</mark>
+    <mark>BJ김XX 상표권 평가상담</mark>
+    <mark>가수이XX 저작권 평가상담</mark>
+    <mark>바X김밥 대치점 영업권평가상담</mark>
+  </marquee>
   <ul id="articles">
   </ul>
 </div>
