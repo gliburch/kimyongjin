@@ -18,8 +18,6 @@ permalink: /emergency/
 
 감정평가사 기업가치평가사 김제프용진
 
-<br>
-
 <ul>
 <li>유선번호 : {{ site.company_tel }}</li>
 <li>직통번호 : 010-2358-2938</li>
