@@ -23,13 +23,16 @@ main {
   margin:15px auto;
   background-color:#fff;
 }
-main h2 {
+main > h2 {
   margin-left:50%;
   margin-right:25px;
-  margin-bottom:25px;
+  margin-bottom:15px;
+  padding-top:20px;
+}
+main > h2:first-of-type {
   padding-top:50px;
 }
-main p {
+main > p {
   margin-left:50%;
   margin-right:25px;
   margin-top:15px;
@@ -37,29 +40,47 @@ main p {
   color:#929292;
   line-height:140%;
 }
-main p a {
+main > p a {
   color:#929292;
   text-decoration:none;
 }
-main p a:hover {
+main > p a:hover {
   text-decoration:underline;
+}
+main > ul {
+  margin-left:50%;
+  margin-right:25px;
+  margin-top:15px;
+  margin-bottom:15px;
+}
+main > ul li {
+  color:#929292;
+  list-style: none;
+}
+main > ul li:before {
+  content:"–";
+  display:inline-block;
+  margin-right:5px;
 }
 @media (max-width: 950px) {
   main {
     width:auto;
     margin:15px;
   }
-  main h2 {
-    margin-left:20px;
-    margin-right:20px;
-    padding-top:30px;
-  }
-  main p {
+  main > h2 {
     margin-left:20px;
     margin-right:20px;
   }
-  main p br {
+  main > p {
+    margin-left:20px;
+    margin-right:20px;
+  }
+  main > p br {
     display:none;
+  }
+  main > ul {
+    margin-left:20px;
+    margin-right:20px;
   }
 }
 main .sidebar {
