@@ -18,7 +18,11 @@ permalink: /emergency/
 
 감정평가사 기업가치평가사 김제프용진
 
-<!-- 핸드폰 : [010-2358-2938](tel:010-2358-2938)<br> -->
-<!-- 사무실 : [{{ site.company_tel }}](tel:{{ site.company_tel }}) -->
+<br>
+
+<ul>
+<li>유선번호 : {{ site.company_tel }}</li>
+<li>직통번호 : 010-2358-2938</li>
+</ul>
 
 {% include contacts.html %}
