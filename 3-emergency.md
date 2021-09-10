@@ -20,7 +20,7 @@ permalink: /emergency/
 
 <ul>
 <li>유선번호 : {{ site.company_tel }}</li>
-<li>직통번호 : 010-2358-2938</li>
+<li>직통번호 : 010-6399-8409</li>
 </ul>
 
 {% include contacts.html %}
