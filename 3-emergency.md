@@ -20,7 +20,7 @@ permalink: /emergency/
 
 <ul>
 <li>유선번호 : {{ site.company_tel }}</li>
-<li>직통번호 : 010-2594-5070</li>
+<li>직통번호 : 010-3000-2472</li>
 </ul>
 
 {% include contacts.html %}
