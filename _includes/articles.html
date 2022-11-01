@@ -262,7 +262,7 @@ function xml2json(xml, tab) {
 }
 </script>
 <script>
-$.get('http://cors.hightechapp.co.kr/?url=https://rss.blog.naver.com/eheheehee', function (response) {
+$.get('https://cors.hightechapp.co.kr/?url=https://rss.blog.naver.com/eheheehee', function (response) {
   var xml = response;
   var jsonString = xml2json(xml).replace('undefined', ''); // 맨 앞에 'undefined' 가 붙어나오는 버그가 있어서 제거함.
   var json = JSON.parse(jsonString);
